@@ -11,10 +11,10 @@ set -u
 set -e
 
 echo Build $ID $VERSION at $T
-set -x
 if [ -d $DIR ] ; then
     cd $DIR
     git pull
+    git checkout $BRANCH
 else
     git clone --branch=$BRANCH $URL $DIR
     cd $DIR

@@ -15,13 +15,7 @@ fi
 
 T=`date +%Y-%m-%d-%H:%M`
 echo Build Freedesktop base at $T
-cd freedesktop-sdk-base/
-git pull
-../lock.sh make &> ../export/logs/build-fdo-base-$T.log
-rm -rf .xdg-app-builder/build-*
-xdg-app update --user org.freedesktop.BaseSdk
-xdg-app update --user org.freedesktop.BasePlatform
-cd ..
+./build_base_runtime.sh org.freedesktop 1.4 git://anongit.freedesktop.org/xdg-app/freedesktop-sdk-base master &> export/logs/build-fdo-base-1.4-$T.log
 
 echo Build Freedesktop 1.4
 T=`date +%Y-%m-%d-%H:%M`
