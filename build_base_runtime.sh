@@ -26,6 +26,6 @@ else
 fi
 
 ../lock.sh make EXPORT_ARGS="$GPG_ARGS"
-xdg-app --user remote add local-$REPO $LOCAL_URL || true
+xdg-app --user remote-add --no-gpg-verify  local-$REPO $LOCAL_URL || true
 xdg-app --user install local-$REPO $ID.BaseSdk $VERSION || xdg-app update --user  $ID.BaseSdk $VERSION
 xdg-app --user install local-$REPO $ID.BasePlatform $VERSION || xdg-app update --user $ID.BasePlatform $VERSION
