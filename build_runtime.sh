@@ -21,11 +21,10 @@ else
     ln -s ../export/repo repo
 fi
 
-../lock.sh make EXPORT_ARGS="$GPG_ARGS"
 rm -rf .xdg-app-builder/build-*
-xdg-app --user install local $ID.Platform $VERSION || true
-xdg-app --user install local $ID.Sdk $VERSION || true
-xdg-app --user install local $ID.Platform.Locale $VERSION || true
-xdg-app --user install local $ID.Sdk.Locale $VERSION || true
-xdg-app --user install local $ID.Sdk.Debug $VERSION || true
-xdg-app update --user 
+../lock.sh make EXPORT_ARGS="$GPG_ARGS"
+xdg-app --user install local $ID.Platform $VERSION || xdg-app update --user $ID.Platform $VERSION
+xdg-app --user install local $ID.Sdk $VERSION || xdg-app update --user $ID.Sdk $VERSION
+xdg-app --user install local $ID.Platform.Locale $VERSION || xdg-app update --user $ID.Platform.Locale $VERSION
+xdg-app --user install local $ID.Sdk.Locale $VERSION || xdg-app update --user $ID.Sdk.Locale $VERSION
+xdg-app --user install local $ID.Sdk.Debug $VERSION || xdg-app update --user $ID.Sdk.Debug $VERSION
