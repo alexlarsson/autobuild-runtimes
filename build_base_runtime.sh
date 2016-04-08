@@ -9,7 +9,7 @@ REPO=$5
 DIR="$ID-base-$VERSION"
 
 # Set this before we change dir
-URL=file://`pwd`/export/$REPO
+LOCAL_URL=file://`pwd`/export/$REPO
 
 set -u
 set -e
@@ -26,6 +26,6 @@ else
 fi
 
 ../lock.sh make EXPORT_ARGS="$GPG_ARGS"
-xdg-app --user remote add local-$REPO $URL || true
+xdg-app --user remote add local-$REPO $LOCAL_URL || true
 xdg-app --user install local-$REPO $ID.BaseSdk $VERSION || xdg-app update --user  $ID.BaseSdk $VERSION
 xdg-app --user install local-$REPO $ID.BasePlatform $VERSION || xdg-app update --user $ID.BasePlatform $VERSION
