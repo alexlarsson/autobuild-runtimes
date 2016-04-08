@@ -2,3 +2,6 @@
 lock
 export
 gnupg
+ostree
+xdg-app
+root
