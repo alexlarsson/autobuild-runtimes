@@ -16,8 +16,8 @@ function init_repo {
 }
 init_repo staging
 init_repo staging-apps
-init_repo staging-nightly
-init_repo staging-nightly-apps
+init_repo nightly
+init_repo nightly-apps
 
 T=`date +%Y-%m-%d-%H:%M`
 echo Build Freedesktop base at $T
