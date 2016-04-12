@@ -26,5 +26,5 @@ rm -rf .xdg-app-builder/build/*
 for i in *.json; do
     T=`date +%Y-%m-%d-%H:%M`
     echo Build $i $BRANCH at $T
-    ./build.sh $i &> ../export/logs/build-`basename $i .json`-$BRANCH-$T.log
+    ./build.sh $i &> ../export/logs/build-`basename $i .json`-$BRANCH-$T.log || true
 done
