@@ -25,7 +25,7 @@ echo Build Freedesktop base at $T
 
 echo Build Freedesktop 1.4
 T=`date +%Y-%m-%d-%H:%M`
-./build_runtime.sh org.freedesktop 1.4 git://anongit.freedesktop.org/xdg-app/freedesktop-sdk-images master repo-staging &> export/logs/build-fdo-1.4-$T.log
+./build_runtime.sh org.freedesktop 1.4 git://anongit.freedesktop.org/xdg-app/freedesktop-sdk-images 1.4 repo-staging &> export/logs/build-fdo-1.4-$T.log
 
 echo Build Gnome 3.20
 T=`date +%Y-%m-%d-%H:%M`
