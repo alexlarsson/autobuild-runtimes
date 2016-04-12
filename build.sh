@@ -44,7 +44,7 @@ echo Update Nightly Repo
 ./update_repo.sh repo-nightly 4 &> export/logs/update-repo-nightly-$T.log
 
 echo Build Apps Gnome Master
-./build_apps.sh gnome-apps-nightly https://github.com/alexlarsson/gnome-apps-nightly.git master repo-nightly-apps &> export/logs/build-gnome-apps-master-$T.log
+./build_apps.sh gnome-apps-nightly https://github.com/alexlarsson/gnome-apps-nightly.git master repo-nightly-apps
 
 T=`date +%Y-%m-%d-%H:%M`
 echo Update Nightly Apps Repo
