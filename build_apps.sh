@@ -10,7 +10,7 @@ DIR="$NAME-$BRANCH"
 set -u
 set -e
 
-echo Build $ID $VERSION at $T
+echo Build $NAME $BRANCH at $T
 if [ -d $DIR ] ; then
     cd $DIR
     git pull
