@@ -33,7 +33,7 @@ T=`date +%Y-%m-%d-%H:%M`
 
 T=`date +%Y-%m-%d-%H:%M`
 echo Update Staging Repo
-./lock.sh ./update_repo.sh repo-staging -1 &> export/logs/update-repo-staging-$T.log
+./update_repo.sh repo-staging -1 &> export/logs/update-repo-staging-$T.log
 
 echo Build Gnome Master
 T=`date +%Y-%m-%d-%H:%M`
@@ -41,14 +41,14 @@ T=`date +%Y-%m-%d-%H:%M`
 
 T=`date +%Y-%m-%d-%H:%M`
 echo Update Nightly Repo
-./lock.sh ./update_repo.sh repo-nightly 4 &> export/logs/update-repo-nightly-$T.log
+./update_repo.sh repo-nightly 4 &> export/logs/update-repo-nightly-$T.log
 
 echo Build Apps Gnome Master
-./build_apps.sh gnome-apps-nightly https://github.com/alexlarsson/gnome-apps-nightly.git master repo-nightly-apps &> export/logs/build-gnome-master-$T.log
+./build_apps.sh gnome-apps-nightly https://github.com/alexlarsson/gnome-apps-nightly.git master repo-nightly-apps &> export/logs/build-gnome-apps-master-$T.log
 
 T=`date +%Y-%m-%d-%H:%M`
 echo Update Nightly Apps Repo
-./lock.sh ./update_repo.sh repo-nightly-apps 4 &> export/logs/update-repo-nightly-apps-$T.log
+./update_repo.sh repo-nightly-apps 4 &> export/logs/update-repo-nightly-apps-$T.log
 
 # Remove old logs
 find export/logs -mtime +5 -exec rm {} \;

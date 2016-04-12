@@ -4,5 +4,5 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
 cd $SCRIPTPATH
-./build.sh
+./lock.sh ./build.sh
 
