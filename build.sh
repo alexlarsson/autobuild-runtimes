@@ -35,6 +35,13 @@ T=`date +%Y-%m-%d-%H:%M`
 echo Update Staging Repo
 ./update_repo.sh repo-staging -1 &> export/logs/update-repo-staging-$T.log
 
+echo Build Apps Gnome stable
+./build_apps.sh gnome-apps-stable https://github.com/alexlarsson/gnome-apps-nightly.git gnome-3-20 repo-staging-apps
+
+T=`date +%Y-%m-%d-%H:%M`
+echo Update Stable Apps Repo
+./update_repo.sh repo-staging-apps 4 &> export/logs/update-repo-staging-apps-$T.log
+
 echo Build Gnome Master
 T=`date +%Y-%m-%d-%H:%M`
 ./build_runtime.sh org.gnome master https://git.gnome.org/browse/gnome-sdk-images master repo-nightly &> export/logs/build-gnome-master-$T.log
