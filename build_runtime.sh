@@ -25,11 +25,11 @@ else
     ln -s ../export/$REPO repo
 fi
 
-rm -rf .xdg-app-builder/build/*
+rm -rf .flatpak-builder/build/*
 make EXPORT_ARGS="$GPG_ARGS"
-xdg-app --user remote-add --no-gpg-verify local-$REPO $LOCAL_URL &> /dev/null  || true
-xdg-app --user install local-$REPO $ID.Platform $VERSION &> /dev/null || xdg-app update --user $ID.Platform $VERSION
-xdg-app --user install local-$REPO $ID.Sdk $VERSION &> /dev/null  || xdg-app update --user $ID.Sdk $VERSION
-xdg-app --user install local-$REPO $ID.Platform.Locale $VERSION &> /dev/null  || xdg-app update --user $ID.Platform.Locale $VERSION
-xdg-app --user install local-$REPO $ID.Sdk.Locale $VERSION &> /dev/null  || xdg-app update --user $ID.Sdk.Locale $VERSION
-xdg-app --user install local-$REPO $ID.Sdk.Debug $VERSION &> /dev/null  || xdg-app update --user $ID.Sdk.Debug $VERSION
+flatpak --user remote-add --no-gpg-verify local-$REPO $LOCAL_URL &> /dev/null  || true
+flatpak --user install local-$REPO $ID.Platform $VERSION &> /dev/null || flatpak update --user $ID.Platform $VERSION
+flatpak --user install local-$REPO $ID.Sdk $VERSION &> /dev/null  || flatpak update --user $ID.Sdk $VERSION
+flatpak --user install local-$REPO $ID.Platform.Locale $VERSION &> /dev/null  || flatpak update --user $ID.Platform.Locale $VERSION
+flatpak --user install local-$REPO $ID.Sdk.Locale $VERSION &> /dev/null  || flatpak update --user $ID.Sdk.Locale $VERSION
+flatpak --user install local-$REPO $ID.Sdk.Debug $VERSION &> /dev/null  || flatpak update --user $ID.Sdk.Debug $VERSION

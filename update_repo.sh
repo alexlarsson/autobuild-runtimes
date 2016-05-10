@@ -22,6 +22,6 @@ else
     done
 fi
 
-xdg-app build-update-repo --generate-static-deltas --prune --prune-depth=$PRUNE_DEPTH  ${EXPORT_ARGS-} export/$REPO
+flatpak build-update-repo --generate-static-deltas --prune --prune-depth=$PRUNE_DEPTH  ${EXPORT_ARGS-} export/$REPO
 
 echo DONE

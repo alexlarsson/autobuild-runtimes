@@ -36,7 +36,7 @@ echo Update Staging Repo
 ./update_repo.sh repo-staging -1 &> export/logs/update-repo-staging-$T.log
 
 echo Build Apps Gnome stable
-./build_apps.sh gnome-apps-stable https://github.com/alexlarsson/gnome-apps-nightly.git gnome-3-20 repo-staging-apps
+./build_apps.sh gnome-apps-stable https://git.gnome.org/browse/gnome-apps-nightly gnome-3-20 repo-staging-apps
 
 T=`date +%Y-%m-%d-%H:%M`
 echo Update Stable Apps Repo
@@ -51,7 +51,7 @@ echo Update Nightly Repo
 ./update_repo.sh repo-nightly 4 &> export/logs/update-repo-nightly-$T.log
 
 echo Build Apps Gnome Master
-./build_apps.sh gnome-apps-nightly https://github.com/alexlarsson/gnome-apps-nightly.git master repo-nightly-apps
+./build_apps.sh gnome-apps-nightly https://git.gnome.org/browse/gnome-apps-nightly master repo-nightly-apps
 
 T=`date +%Y-%m-%d-%H:%M`
 echo Update Nightly Apps Repo

@@ -21,7 +21,7 @@ else
     ln -s ../export/$REPO repo
 fi
 
-rm -rf .xdg-app-builder/build/*
+rm -rf .flatpak-builder/build/*
 
 for i in *.json; do
     T=`date +%Y-%m-%d-%H:%M`
