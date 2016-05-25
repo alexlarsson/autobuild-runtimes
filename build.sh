@@ -21,11 +21,11 @@ init_repo nightly-apps
 
 T=`date +%Y-%m-%d-%H:%M`
 echo Build Freedesktop base at $T
-./build_base_runtime.sh org.freedesktop 1.4 git://anongit.freedesktop.org/xdg-app/freedesktop-sdk-base 1.4 repo-staging &> export/logs/build-fdo-base-1.4-$T.log
+./build_base_runtime.sh org.freedesktop 1.4 https://github.com/flatpak/freedesktop-sdk-base.git 1.4 repo-staging &> export/logs/build-fdo-base-1.4-$T.log
 
 echo Build Freedesktop 1.4
 T=`date +%Y-%m-%d-%H:%M`
-./build_runtime.sh org.freedesktop 1.4 git://anongit.freedesktop.org/xdg-app/freedesktop-sdk-images 1.4 repo-staging &> export/logs/build-fdo-1.4-$T.log
+./build_runtime.sh org.freedesktop 1.4 https://github.com/flatpak/freedesktop-sdk-images.git 1.4 repo-staging &> export/logs/build-fdo-1.4-$T.log
 
 echo Build Gnome 3.20
 T=`date +%Y-%m-%d-%H:%M`
